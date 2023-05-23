@@ -1,0 +1,42 @@
+﻿@model IEnumerable<lab8_mvc_net.Models.productos>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.nombreProducto)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.cantidadPorUnidad)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.categoriaProducto)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.nombreProducto)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.cantidadPorUnidad)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.categoriaProducto)
+            </td>
+        </tr>
+    }
+
+</table>
